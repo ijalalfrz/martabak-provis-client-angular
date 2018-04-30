@@ -1,0 +1,30 @@
+<div id="menu" class="section-padding">
+  <div class="section-title-container">
+    <h2 class="section-title">Menu Martabak Si Mamen</h2>
+  </div>
+
+  <div class="event-container">
+    <div class="row">
+
+      <div *ngFor="let itm of MenuList" class="col-sm-6">
+        <div class="event-item">
+          <div class="event-img">
+            <img src="assets/images/martabak-bulat.png" alt="Event 1">
+          </div><!-- /.event-img -->
+          <div class="event-time">
+            <span class="event-month">IDR</span>
+            <span class="event-date">{{ toPointPrice(itm.harga) }}</span>
+
+          </div><!-- /.event-time -->
+          <h3 class="event-title">{{itm.topping}} - {{itm.kategori_menu}}</h3>
+          <div class="event-place">
+            Martabak manis dengan coklat dan keju
+          </div>
+          <button type="button" class="btn btn-sm btn-light-green">BELI</button>
+
+        </div><!-- /.event-item -->
+      </div>
+
+    </div><!-- /.row -->
+  </div><!-- /.event-container -->
+</div>

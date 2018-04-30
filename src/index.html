@@ -1,14 +1,162 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>MartabakMamen</title>
+  <meta charset="UTF-8">
+  <title>Martabak Si Mamen</title>
   <base href="/">
 
+  <meta name="description" content="Foody HTML Template by Jewel Theme" >
+
+  <meta name="author" content="Jewel Theme">
+
+  <!-- Mobile Specific Meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+  <!-- Include modernizr-2.8.0.min.js -->
+  <script src="assets/js/modernizr-2.8.0.min.js"></script>
+
+  <!-- Bootstrap  -->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Icon Fonts  -->
+  <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+  <link href="assets/css/linecons-font-style.css" rel="stylesheet">
+
+  <!-- Plugins  -->
+  <link href="assets/css/jquery.fs.boxer.css" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/owl.carousel.css">
+  <link href="assets/css/animate.css" rel="stylesheet"/>
+
+  <!-- Custom Styles -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/responsive.css" rel="stylesheet">
+
 </head>
-<body>
-  <app-root></app-root>
+<body class="home">
+
+  <!-- Menu -->
+  <div class="navbar-fixed-top main-menu-continer">
+    <!-- Responsive Navigation -->
+    <button type="button" class="btn menubar-toggle">
+      <i class="fa fa-bars"></i>
+    </button> <!-- /.navbar-toggle -->
+
+    <div id="main-menu" class="navbar navbar-default">
+      <div class="navbar-header">
+        <!-- Logo -->
+        <a class="navbar-brand" href="./">
+          <img src="assets/images/web-img/logo.png" alt="Foody Logo">
+        </a><!-- /.navbar-brand -->
+      </div> <!-- /.navbar-header -->
+
+      <a href="" class="btn btn-sm btn-border-white">PESANAN KAMU</a>
+
+      <nav class="navbar-collapse clearfix" role="navigation">
+
+        <!-- Main navigation -->
+        <!-- <ul id="headernavigation" class="nav navbar-nav">
+          <li class="active"><a href="#top-section">Pesan</a></li>
+          <li><a href="#welcome">Tentang</a></li>
+        </ul> -->
+        <!-- /.nav .navbar-nav -->
+      </nav> <!-- /.navbar-collapse  -->
+
+      <!-- <div class="nav-social-btn">
+        <a href="#" class="twitter-btn"><i class="fa fa-twitter-square"></i></a>
+        <a href="#" class="facebook-btn"><i class="fa fa-facebook-square"></i></a>
+        <a href="#" class="pinterest-btn"><i class="fa fa-pinterest-square"></i></a>
+        <a href="#" class="youtube-btn"><i class="fa fa-youtube-square"></i></a>
+        <a href="#" class="rss-btn"><i class="fa fa-vimeo-square"></i></a>
+      </div> -->
+      <!-- /.nav-social-btn -->
+    </div><!-- /#main-menu -->
+
+  </div><!-- /.main-menu-continer -->
+  <!-- Menu End -->
+
+
+
+
+  <div class="container">
+    <div class="row">
+
+      <!-- Main Container -->
+      <div id="main-container"  class="main-container pull-right" >
+        <app-root></app-root>
+
+      </div><!-- /#main-container -->
+      <!-- Main Container End -->
+
+
+
+
+      <!-- Footer Section -->
+      <footer id="footer-section" class="main-container pull-right">
+
+        <div class="copyrights ">
+
+          &copy; <a href="#">Martabak Si Mamen</a>  2018 - All Rights Reserved
+
+        </div><!-- /.copyrights -->
+      </footer><!-- /#footer-section -->
+      <!-- Footer Section End -->
+
+
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+
+  <!-- Include jquery.min.js plugin -->
+  <script src="assets/js/jquery-2.1.0.min.js"></script>
+
+  <!-- Include JavaScript Plugins -->
+  <script src="assets/js/plugins.js"></script>
+
+  <!-- Include jquery.parallax.js Plugins -->
+  <script src="assets/js/jquery.parallax.js"></script>
+
+  <!-- Include wow.js Plugins -->
+  <script src="assets/js/wow.min.js"></script>
+
+  <!-- Include JavaScript Functions -->
+  <script src="assets/js/functions.js"></script>
+
+  <!-- Gmap3.js For Static Maps -->
+  <script src="assets/js/gmap3.js"></script>
+
+  <script type="text/javascript">
+
+    /*----------- Google Map - with support of gmaps.js ----------------*/
+
+    function isMobile() {
+      return ('ontouchstart' in document.documentElement);
+    }
+
+
+
+    jQuery(document).ready(function($) {
+      "use strict";
+
+      /*---------------------- Current Menu Item -------------------------*/
+      $('#main-menu #headernavigation').onePageNav({
+        currentClass: 'active',
+        changeHash: false,
+        scrollSpeed: 750,
+        scrollThreshold: 0.5,
+        scrollOffset: 0,
+        filter: ':not(.sub-menu a, .not-in-home)',
+        easing: 'swing',
+        begin: function() {
+          $('body').append('<div id="device-dummy" style="height: 1px;"></div>');
+        },
+        end: function() {
+          $('#device-dummy').remove();
+        }
+      });
+
+    });
+    // document ready function End
+
+  </script>
 </body>
 </html>

@@ -99,8 +99,9 @@ body {
 }
 .container {
 	/*background: #9bce5b;*/
-	background: #fff;
-	height: 100%;
+	background: transparent;
+	min-height: 100vh;
+	/*height: 100%;*/
 }
 
 .left-sidebar {
@@ -2748,4 +2749,54 @@ body.v2 #footer-section {
 
 #menu .btn{
 	margin:10px 0px;
+}
+
+
+.btn.selected {
+    background: #fcc048;
+    color: #ffffff;
+}
+
+
+.overlay-wrapper{
+	position: fixed;
+	display: flex;
+	width: 100%;
+	height: 100%;
+	z-index: 990;
+	left: 0;
+	top:0;
+	align-items: center;
+	justify-content: center;
+	display: none;
+}
+
+.overlay{
+	left: 0;
+	top:0;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.panel-popup{
+	padding: 20px;
+	background-color: #fff;
+	width: 100%;
+	max-width: 400px;
+	z-index: 991;
+}
+
+.panel-popup input{
+	width: 50px;
+	float:right;
+}
+.panel-popup ul li{
+	padding: 10px;
+}
+.panel-popup ul{
+	list-style: none;
+	padding: 0;
+	margin:0;
 }

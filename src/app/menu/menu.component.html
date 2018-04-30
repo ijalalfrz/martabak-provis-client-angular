@@ -1,8 +1,31 @@
+<div id="beli-modal" class="overlay-wrapper">
+  <div class="overlay"></div>
+  <div class="panel-popup">
+    <h2>PILIH SIZE DAN JUMLAH</h2>
+    <ul *ngIf="SizeList">
+      <li *ngFor="let list of SizeList ">
+        <span>{{list.size}} - {{list.harga | currency:'IDR'}}</span>
+        <input type="text" name="">
+      </li>
+    </ul>
+    <div class="text-center">
+      <button type="button" class="btn btn-sm btn-light-green">TAMBAH KE KERANJANG</button>
+
+    </div>
+  </div>
+</div>
+
 <div id="menu" class="section-padding">
   <div class="section-title-container">
     <h2 class="section-title">Menu Martabak Si Mamen</h2>
   </div>
+  <div class="text-center">
+    <p>Pilih kesukaanmu</p>
+    <a (click)="getByCategory(1)" [class.selected]="active === 'manis'" class="btn btn-sm btn-light-green">MANIS</a>
+    <a (click)="getByCategory(2)" [class.selected]="active === 'asin'" class="btn btn-sm btn-light-green">ASIN</a>
+  </div>
 
+  <app-loader [isVisible] = "loading"></app-loader>
   <div class="event-container">
     <div class="row">
 
@@ -12,15 +35,15 @@
             <img src="assets/images/martabak-bulat.png" alt="Event 1">
           </div><!-- /.event-img -->
           <div class="event-time">
-            <span class="event-month">IDR</span>
+            <span class="event-month">FROM IDR</span>
             <span class="event-date">{{ toPointPrice(itm.harga) }}</span>
 
           </div><!-- /.event-time -->
-          <h3 class="event-title">{{itm.topping}} - {{itm.kategori_menu}}</h3>
+          <h3 class="event-title">{{itm.topping}} </h3>
           <div class="event-place">
-            Martabak manis dengan coklat dan keju
+            Martabak {{itm.kategori_menu}} dengan topping {{itm.topping}}
           </div>
-          <button type="button" class="btn btn-sm btn-light-green">BELI</button>
+          <button (click)="getSizeById(itm.id_menu)" type="button" class="beli btn btn-sm btn-light-green">BELI</button>
 
         </div><!-- /.event-item -->
       </div>

@@ -1,2 +1,67 @@
-<ng-progress></ng-progress>
-<router-outlet></router-outlet>
+  <!-- Menu -->
+  <div class="navbar-fixed-top main-menu-continer">
+    <!-- Responsive Navigation -->
+    <button type="button" class="btn menubar-toggle">
+      <i class="fa fa-bars"></i>
+    </button> <!-- /.navbar-toggle -->
+
+    <div id="main-menu" class="navbar navbar-default">
+      <div class="navbar-header">
+        <!-- Logo -->
+        <a routerLink="/">
+          <img src="assets/images/logo.png" alt="Foody Logo">
+        </a><!-- /.navbar-brand -->
+      </div> <!-- /.navbar-header -->
+
+      <a href="" class="btn btn-sm btn-border-white">PESANAN KAMU</a>
+
+      <nav class="navbar-collapse clearfix" role="navigation">
+
+        <!-- Main navigation -->
+        <!-- <ul id="headernavigation" class="nav navbar-nav">
+          <li class="active"><a href="#top-section">Pesan</a></li>
+          <li><a href="#welcome">Tentang</a></li>
+        </ul> -->
+        <!-- /.nav .navbar-nav -->
+      </nav> <!-- /.navbar-collapse  -->
+
+      <!-- <div class="nav-social-btn">
+        <a href="#" class="twitter-btn"><i class="fa fa-twitter-square"></i></a>
+        <a href="#" class="facebook-btn"><i class="fa fa-facebook-square"></i></a>
+        <a href="#" class="pinterest-btn"><i class="fa fa-pinterest-square"></i></a>
+        <a href="#" class="youtube-btn"><i class="fa fa-youtube-square"></i></a>
+        <a href="#" class="rss-btn"><i class="fa fa-vimeo-square"></i></a>
+      </div> -->
+      <!-- /.nav-social-btn -->
+    </div><!-- /#main-menu -->
+
+  </div><!-- /.main-menu-continer -->
+  <!-- Menu End -->
+
+  <div class="container">
+    <div class="row">
+
+      <!-- Main Container -->
+      <div id="main-container"  class="main-container pull-right" >
+        <router-outlet></router-outlet>
+
+      </div><!-- /#main-container -->
+      <!-- Main Container End -->
+
+
+
+
+      <!-- Footer Section -->
+      <footer id="footer-section" class="main-container pull-right">
+
+        <div class="copyrights ">
+
+          &copy; <a href="#">Martabak Si Mamen</a>  2018 - All Rights Reserved
+
+        </div><!-- /.copyrights -->
+      </footer><!-- /#footer-section -->
+      <!-- Footer Section End -->
+
+
+    </div><!-- /.row -->
+  </div><!-- /.container -->

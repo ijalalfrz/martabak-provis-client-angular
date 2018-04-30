@@ -6,6 +6,7 @@ import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
 
 import { MenuModel } from '../models/MenuModel';
+import { MenuPrice } from '../models/MenuPriceModel';
 
 import { BASE_API } from '../global';
 
@@ -31,6 +32,23 @@ export class MenuService {
           catchError(this.handleError('getMenu', []))
         );
     }
+
+    getMenusByCat (cat:string): Observable<MenuModel[]> {
+      return this.http.get<MenuModel[]>(`${BASE_API()}/menu/category/${cat}`, httpOptions)
+        .pipe(
+          tap(heroes => console.log(`fetched menu`)),
+          catchError(this.handleError('getMenu', []))
+        );
+    }
+
+    getSizeById (id:number): Observable<MenuPrice[]> {
+      return this.http.get<MenuPrice[]>(`${BASE_API()}/menu/price/${id}`, httpOptions)
+        .pipe(
+          tap(heroes => console.log(`fetched menu`)),
+          catchError(this.handleError('getMenu', []))
+        );
+    }
+
 
 
 

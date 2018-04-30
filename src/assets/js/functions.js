@@ -24,6 +24,10 @@ jQuery(document).on("ready", mainMenu);
 
 
 jQuery(".menubar-toggle").click(function(){ jQuery(".main-menu-continer").toggleClass("opne-menu"); });
+
+$(document).on('click','.menubar-toggle', function(){jQuery(".main-menu-continer").toggleClass("opne-menu");});
+
+
 jQuery( "ul.sub-menu").parent().append("<span class='toggle_nav_button'></span>");
 jQuery(".toggle_nav_button").click(
   function(){
@@ -37,7 +41,14 @@ jQuery(".toggle_nav_button").click(
     });
   });
 
-
+$(document).on('click','.overlay', function(){
+  $('.overlay-wrapper').fadeOut();
+});
+$(document).on('click','.beli', function(){
+  $('#beli-modal').css("display", "flex")
+    .hide()
+    .fadeIn();
+});
 
 
 /*------------------- Parallax ------------------*/

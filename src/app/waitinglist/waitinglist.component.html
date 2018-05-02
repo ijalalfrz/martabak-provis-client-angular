@@ -1,0 +1,22 @@
+<div class="section-padding">
+  <div class="section-title-container">
+    <h2 class="section-title">Antrian Order</h2>
+  </div>
+  <app-loader [isVisible]="loading_data"></app-loader>
+  <table class="table table-bordered table-responsive">
+    <tr>
+      <th>No</th>
+      <th>Nama</th>
+      <th>Jumlah</th>
+      <th>Status</th>
+    </tr>
+    <tr *ngFor="let itm of listData; index as i">
+      <td>{{i+1}}</td>
+      <td>{{itm.transaksi.nama_pembeli}}</td>
+      <td>{{itm.transaksi.jumlah_beli}}</td>
+
+      <td> {{itm.transaksi.status}}</td>
+
+    </tr>
+  </table>
+</div>

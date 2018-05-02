@@ -1,15 +1,63 @@
+<div id="list-beli-modal" class="overlay-wrapper">
+  <div class="overlay"></div>
+  <div class="panel-popup">
+    <div class="text-center" *ngIf="isDone">
+      <h2>TERIMAKASIH</h2>
+      <p>Pesanan anda sedang diproses, mohon bayar di kasir yang tersedia.</p>
+      <button (click)="resetDone()" type="button" class="closeAdd btn btn-sm btn-light-green">OK</button>
+
+    </div>
+    <div *ngIf="!isDone">
+
+      <h2>PESANAN ANDA</h2>
+      <ul *ngIf="UserTransaksi && UserTransaksi.ListDetail.length>0; else elseBlock">
+        <li *ngFor="let list of UserTransaksi.ListDetail;index as i">
+          {{list.topping}} ({{list.size}})<span class="pull-right">{{list.jumlah}} x {{list.harga_sekarang | currency:'IDR'}} <button (click)="removeItem(list.id_size)">x</button></span>
+        </li>
+        <li>
+          <b>
+          TOTAL <span *ngIf="UserTransaksi" class="pull-right">{{grandTotal|currency:'IDR'}}</span>
+          </b>
+        </li>
+      </ul>
+      <hr>
+      <p *ngIf="errMsg">{{errMsg}}</p>
+      <div class="text-center">
+        <ng-template #elseBlock> <span class='text-center'> Anda belum menambahkan martabak.</span></ng-template>
+        <input [(ngModel)]="UserTransaksi.nama_pembeli" class="name-order" [attr.disabled] = "disabled_nama?'':null" placeholder="Masukkan Nama Anda" type="" name="">
+        <button (click)="prosesBeli()" type="button" class="btn btn-sm btn-light-green">{{loading_pesan}}</button>
+        <button type="button" class="closeAdd btn btn-sm btn-light-green">LANJUT BELI</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div id="beli-modal" class="overlay-wrapper">
   <div class="overlay"></div>
   <div class="panel-popup">
     <h2>PILIH SIZE DAN JUMLAH</h2>
+    <h5>{{martabakPilih}}</h5>
+    <app-loader [isVisible] = "loading_size"></app-loader>
+
     <ul *ngIf="SizeList">
       <li *ngFor="let list of SizeList ">
-        <span>{{list.size}} - {{list.harga | currency:'IDR'}}</span>
-        <input type="text" name="">
+        <div class="row">
+          <div class="col-md-7">
+            <span>{{list.size}} - {{list.harga | currency:'IDR'}}</span>
+
+          </div>
+          <div class="col-md-5">
+            <button (click)="minOrder(list)">-</button>
+            <input readonly type="text" name="" value="{{list.size == 'Medium' ? Medium.jumlah:Large.jumlah}}">
+            <button (click)="addOrder(list)">+</button>
+
+          </div>
+        </div>
       </li>
     </ul>
     <div class="text-center">
-      <button type="button" class="btn btn-sm btn-light-green">TAMBAH KE KERANJANG</button>
+      <button (click)="doAddDetail()" type="button" class="beliAdd btn btn-sm btn-light-green">TAMBAH KE KERANJANG</button>
+      <button type="button" class="closeAdd btn btn-sm btn-light-green">BATAL</button>
 
     </div>
   </div>

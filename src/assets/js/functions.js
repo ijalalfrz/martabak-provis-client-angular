@@ -44,23 +44,33 @@ jQuery(".toggle_nav_button").click(
 $(document).on('click','.overlay', function(){
   $('.overlay-wrapper').fadeOut();
 });
+
+$(document).on('click','.closeAdd', function(){
+  $('.overlay-wrapper').fadeOut();
+});
 $(document).on('click','.beli', function(){
   $('#beli-modal').css("display", "flex")
     .hide()
     .fadeIn();
 });
 
+$(document).on('click','.list-beli', function(){
+  $('#list-beli-modal').css("display", "flex")
+    .hide()
+    .fadeIn();
+});
+
 
 /*------------------- Parallax ------------------*/
-function parallaxSection(){
-  jQuery("#top-section").parallax("50%", 0.5);
-  jQuery("#book-table").parallax("50%", 0.5);
-  jQuery("#mobile-app").parallax("50%", 0.5);
-  jQuery("#testimonial").parallax("50%", 0.5);
-  jQuery("#tweet").parallax("50%", 0.5);
-}
-jQuery(window).on("resize", parallaxSection);
-jQuery(document).on("ready", parallaxSection);
+// function parallaxSection(){
+//   jQuery("#top-section").parallax("50%", 0.5);
+//   jQuery("#book-table").parallax("50%", 0.5);
+//   jQuery("#mobile-app").parallax("50%", 0.5);
+//   jQuery("#testimonial").parallax("50%", 0.5);
+//   jQuery("#tweet").parallax("50%", 0.5);
+// }
+// jQuery(window).on("resize", parallaxSection);
+// jQuery(document).on("ready", parallaxSection);
 
 
 

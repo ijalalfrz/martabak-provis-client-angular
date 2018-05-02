@@ -1,0 +1,20 @@
+<div id="menu" class="section-padding">
+  <div class="section-title-container">
+    <h2 class="section-title">Log In Toko</h2>
+  </div>
+  <div class="text-center">
+
+    <div class="login-wrap">
+      <form #f="ngForm" (ngSubmit)="login(f)" novalidate>
+        <app-loader [isVisible]="loading"></app-loader>
+        <p style="margin-bottom: 10px" *ngIf="errMsg" class="warning-text">{{errMsg}}</p>
+        <input [(ngModel)] = "user.username" type="text" name="username" placeholder="Username" required>
+
+        <input [(ngModel)] = "user.password" type="password" name="password" placeholder="Password" required>
+        <button type="submit" class="btn btn-sm btn-light-green" >Login</button>
+
+      </form>
+    </div>
+  </div>
+
+</div>

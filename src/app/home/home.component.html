@@ -1,3 +1,9 @@
+<div id="warn-modal" class="overlay-wrapper">
+  <div class="overlay"></div>
+  <div class="panel-popup">
+    <h2>Harap login toko terlebih dahulu</h2>
+  </div>
+</div>
 <div>
   <!-- Top Section -->
   <section id="top-section" class="parallax-style">
@@ -14,7 +20,8 @@
             <h3 class="top-heading-2"> Foody Love  </h3>
             <h3 class="top-heading-3"> The perfect place for food lover. </h3>
             <div class="btn-container">
-              <a routerLink="/menu" class="btn btn-sm btn-light-green">PESAN</a>
+              <a (click)="goToMenu()" class="btn btn-sm btn-light-green">PESAN</a>
+
             </div><!-- /.btn-container -->
           </div><!-- /.item -->
 
@@ -23,7 +30,8 @@
             <h3 class="top-heading-2"> Easy Order </h3>
             <h3 class="top-heading-3"> Order here and wait for your spesial Martabak Si Mamen. </h3>
             <div class="btn-container">
-              <a routerLink="/menu" class="btn btn-sm btn-light-green">PESAN</a>
+              <a (click)="goToMenu()" class="btn btn-sm btn-light-green">PESAN</a>
+
             </div><!-- /.btn-container -->
           </div><!-- /.item -->
 
@@ -32,7 +40,7 @@
             <h3 class="top-heading-2"> Friend &amp; Family </h3>
             <h3 class="top-heading-3"> The perfect place for Enjoyment.</h3>
             <div class="btn-container">
-              <a routerLink="/menu" class="btn btn-sm btn-light-green">PESAN</a>
+              <a (click)="goToMenu()" class="btn btn-sm btn-light-green">PESAN</a>
             </div><!-- /.btn-container -->
           </div><!-- /.item -->
 

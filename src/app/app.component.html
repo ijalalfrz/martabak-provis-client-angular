@@ -12,8 +12,14 @@
           <img src="assets/images/logo.png" alt="Foody Logo">
         </a><!-- /.navbar-brand -->
       </div> <!-- /.navbar-header -->
+      <div class="text-center" *ngIf="url=='menu'">
+        <a (click)="onClickOpenModal()" class="list-beli btn btn-sm btn-border-white">PESANAN KAMU ({{numPesanan}})</a>
 
-      <a href="" class="btn btn-sm btn-border-white">PESANAN KAMU</a>
+      </div>
+      <div class="text-center" *ngIf="isLogged && url=='admin'">
+        <a routerLink='/waitinglist' class="list-beli btn btn-sm btn-border-white">WAITING LIST</a>
+        <a (click)="logout()" class="list-beli btn btn-sm btn-border-white">LOGOUT</a>
+      </div>
 
       <nav class="navbar-collapse clearfix" role="navigation">
 
@@ -42,7 +48,7 @@
     <div class="row">
 
       <!-- Main Container -->
-      <div id="main-container"  class="main-container pull-right" >
+      <div id="main-container"  class="main-container utama pull-right" >
         <router-outlet></router-outlet>
 
       </div><!-- /#main-container -->

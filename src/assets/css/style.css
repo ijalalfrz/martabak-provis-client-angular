@@ -100,8 +100,6 @@ body {
 .container {
 	/*background: #9bce5b;*/
 	background: transparent;
-	min-height: 100vh;
-	/*height: 100%;*/
 }
 
 .left-sidebar {
@@ -110,8 +108,11 @@ body {
 	overflow: hidden;
 }
 .main-container {
-	width:74.3604%;
+	width:75.3604%;
 	background: #ffffff;
+}
+.main-container.utama{
+	min-height: 85vh;
 }
 a {
 	color:#0d0d0d;
@@ -2784,13 +2785,13 @@ body.v2 #footer-section {
 	padding: 20px;
 	background-color: #fff;
 	width: 100%;
-	max-width: 400px;
+	max-width: 450px;
 	z-index: 991;
 }
 
-.panel-popup input{
-	width: 50px;
-	float:right;
+#beli-modal .panel-popup input{
+	text-align: center;
+	width: 30px;
 }
 .panel-popup ul li{
 	padding: 10px;
@@ -2799,4 +2800,14 @@ body.v2 #footer-section {
 	list-style: none;
 	padding: 0;
 	margin:0;
+}
+
+
+.name-order{
+	padding: 10px;
+	width: 100%;
+	text-align: center;
+}
+.warning-text{
+	color: #F0AD4E;
 }
